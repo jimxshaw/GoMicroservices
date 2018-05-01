@@ -4,10 +4,14 @@ syntax = "proto3";
 
 package go.micro.srv.consignment; 
 
+// Define our service. Should contain methods that we'd like
+// to expose to other services.
 service ShippingService {
   rpc CreateConsignment(Consignment) returns (Response) {}
 }
 
+// Define message types, which essentially are our 
+// data structures. Messages are simply custom types. 
 message Consignment {
   string id = 1;
   string description = 2;
