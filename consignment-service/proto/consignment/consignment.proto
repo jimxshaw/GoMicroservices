@@ -8,6 +8,7 @@ package go.micro.srv.consignment;
 // to expose to other services.
 service ShippingService {
   rpc CreateConsignment(Consignment) returns (Response) {}
+  rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
 // Define message types, which essentially are our 
@@ -27,7 +28,12 @@ message Container {
   string user_id = 4;
 }
 
+message GetRequest {}
+
 message Response {
   bool created = 1;
   Consignment consignment = 2;
+
+  // Added a pluralized consignment to our generic response message.
+  repeated Consignment consignments = 3;
 }
