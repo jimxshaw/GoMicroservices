@@ -40,7 +40,7 @@ func (m *Consignment) Reset()         { *m = Consignment{} }
 func (m *Consignment) String() string { return proto.CompactTextString(m) }
 func (*Consignment) ProtoMessage()    {}
 func (*Consignment) Descriptor() ([]byte, []int) {
-	return fileDescriptor_consignment_d7d44730a6d0597b, []int{0}
+	return fileDescriptor_consignment_ccc8a68745729a49, []int{0}
 }
 func (m *Consignment) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Consignment.Unmarshal(m, b)
@@ -109,7 +109,7 @@ func (m *Container) Reset()         { *m = Container{} }
 func (m *Container) String() string { return proto.CompactTextString(m) }
 func (*Container) ProtoMessage()    {}
 func (*Container) Descriptor() ([]byte, []int) {
-	return fileDescriptor_consignment_d7d44730a6d0597b, []int{1}
+	return fileDescriptor_consignment_ccc8a68745729a49, []int{1}
 }
 func (m *Container) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Container.Unmarshal(m, b)
@@ -167,7 +167,7 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_consignment_d7d44730a6d0597b, []int{2}
+	return fileDescriptor_consignment_ccc8a68745729a49, []int{2}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRequest.Unmarshal(m, b)
@@ -188,8 +188,9 @@ func (m *GetRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_GetRequest proto.InternalMessageInfo
 
 type Response struct {
-	Created              bool           `protobuf:"varint,1,opt,name=created" json:"created,omitempty"`
-	Consignment          *Consignment   `protobuf:"bytes,2,opt,name=consignment" json:"consignment,omitempty"`
+	Created     bool         `protobuf:"varint,1,opt,name=created" json:"created,omitempty"`
+	Consignment *Consignment `protobuf:"bytes,2,opt,name=consignment" json:"consignment,omitempty"`
+	// Added a pluralized consignment to our generic response message.
 	Consignments         []*Consignment `protobuf:"bytes,3,rep,name=consignments" json:"consignments,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
@@ -200,7 +201,7 @@ func (m *Response) Reset()         { *m = Response{} }
 func (m *Response) String() string { return proto.CompactTextString(m) }
 func (*Response) ProtoMessage()    {}
 func (*Response) Descriptor() ([]byte, []int) {
-	return fileDescriptor_consignment_d7d44730a6d0597b, []int{3}
+	return fileDescriptor_consignment_ccc8a68745729a49, []int{3}
 }
 func (m *Response) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Response.Unmarshal(m, b)
@@ -353,9 +354,9 @@ var _ShippingService_serviceDesc = grpc.ServiceDesc{
 	Metadata: "consignment.proto",
 }
 
-func init() { proto.RegisterFile("consignment.proto", fileDescriptor_consignment_d7d44730a6d0597b) }
+func init() { proto.RegisterFile("consignment.proto", fileDescriptor_consignment_ccc8a68745729a49) }
 
-var fileDescriptor_consignment_d7d44730a6d0597b = []byte{
+var fileDescriptor_consignment_ccc8a68745729a49 = []byte{
 	// 345 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0xbf, 0x4e, 0xc3, 0x30,
 	0x10, 0x87, 0x49, 0xff, 0xe7, 0x52, 0x51, 0xd5, 0x03, 0x58, 0x30, 0x10, 0x05, 0x90, 0x3a, 0x65,
